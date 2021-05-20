@@ -11,12 +11,11 @@ const Dropdown = ({ label, options, selected, onSelectedChange }) => {
       }
       setOpen(false);
     };
+
     document.body.addEventListener('click', onBodyClick, { capture: true });
 
     return () => {
-      document.body.removeEventListener('click', onBodyClick, {
-        capture: true,
-      });
+      document.body.removeEventListener('click', onBodyClick, { capture: true, });
     };
   }, []);
 
@@ -26,12 +25,8 @@ const Dropdown = ({ label, options, selected, onSelectedChange }) => {
     }
 
     return (
-      <div
-        key={option.value}
-        onClick={() => onSelectedChange(option)}
-        className='item'
-      >
-        {option.label}
+      <div key={option.value} onClick={() => onSelectedChange(option)} className='item'>
+        {option.value}
       </div>
     );
   });
@@ -41,18 +36,17 @@ const Dropdown = ({ label, options, selected, onSelectedChange }) => {
       <div className='field'>
         <br />
         <label className='label'>{label}</label>
-        <div
-          onClick={() => setOpen(!open)}
-          className={`ui selection dropdown ${open ? 'visible active' : ''}`}
-        >
+        <div onClick={() => setOpen(!open)} className={`ui selection dropdown ${open ? 'visible active' : ''}`} >
           <i className='dropdown icon'></i>
-          <div className='text'>{selected.label}</div>
+          <div className='text'>{selected.value}</div>
           <div className={`menu ${open ? 'visible transition' : ''}`}>
             {renderedOptions}
           </div>
         </div>
       </div>
+      <p style={{marginLeft: '2%', color: `${selected.color}`}}>{selected.label}</p>
     </div>
+
   );
 };
 

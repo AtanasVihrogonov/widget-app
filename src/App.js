@@ -22,40 +22,31 @@ const items = [
 
 const options = [
   {
-    label: 'Red',
-    value: 'red!',
+    value: 'red',
+    label: 'The text is Red',
+    color: 'red',
   },
   {
-    label: 'Green',
-    value: 'green!',
+    value: 'green',
+    label: 'The text is Green',
+    color: 'green',
   },
   {
-    label: 'Blue',
-    value: 'blue!',
+    value: 'blue',
+    label: 'The text is Blue',
+    color: 'blue',
   },
 ];
 
 export default () => {
-  // const [selected, setSelected] = useState(options[0]);
-  // const [showDropdown, setShowDropdown] = useState(true);
+  const [selected, setSelected] = useState(options[0]);
+  const [showDropdown, setShowDropdown] = useState(true);
   return (
-    <div style={{ margin: '10px' }}>
+    <div style={{ margin: '5%' }}>
       {/* <Accordion items={items} /> */}
       {/* <Search /> */}
-      {/* <button
-        onClick={() => {
-          setShowDropdown(!showDropdown);
-        }}
-      >
-        Toggle Dropdown
-      </button>
-      {showDropdown ? (
-        <Dropdown
-          selected={selected}
-          onSelectedChange={setSelected}
-          options={options}
-        />
-      ) : null} */}
+      {/* <button onClick={ () => {setShowDropdown(!showDropdown); } }> Toggle Dropdown </button>
+      {showDropdown ? ( <Dropdown options={options} selected={selected} onSelectedChange={setSelected} /> ) : null} */}
       <Translate />
     </div>
   );

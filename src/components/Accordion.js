@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const Accordion = ({ items }) => {
-  // initialize new state
+  // initialize new pice of state
   const [activeIndex, setActiveIndex] = useState(null);
 
   const onTitleClick = (index) => {
@@ -18,7 +18,7 @@ const Accordion = ({ items }) => {
           <i className='dropdown icon'></i>
           {item.title}
         </div>
-        <div className={'content' + active}>
+        <div style={{marginLeft: '5%'}} className={'content' + active}>
           <p>{item.content}</p>
         </div>
       </React.Fragment>
